@@ -1,8 +1,7 @@
-import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
-data=pd.read_csv(r"data_mid_project_DE.csv")
+from readdata import data
 st.sidebar.title("RETAIL STORE SALES")
 
 info=st.sidebar.checkbox("Info",False)
@@ -117,4 +116,5 @@ if st.sidebar.button("SHOW"):
         # handling in data type object to int 
         data=pd.get_dummies(data,columns=["Payment Method","Location","Discount Applied"],dtype="int")
         st.table(data)
+
         
